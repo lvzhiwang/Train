@@ -23,7 +23,8 @@ public class LogInvoHandler implements InvocationHandler{
      * @param clazz
      * @return
      */
-    public synchronized static<T> T getProxyInstance(Class<T> clazz){
+    @SuppressWarnings("unchecked")
+	public synchronized static<T> T getProxyInstance(Class<T> clazz){
         LogInvoHandler invoHandler = invoHandlers.get(clazz);
 
         if(null == invoHandler){
